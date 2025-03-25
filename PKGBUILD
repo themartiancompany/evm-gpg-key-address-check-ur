@@ -164,7 +164,7 @@ package() {
     install
   install \
     -Dm644 \
-    "LICENSE" \
+    "COPYING" \
     -t \
     "${pkgdir}/usr/share/licenses/${pkgname}/"
 }
