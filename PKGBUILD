@@ -162,6 +162,11 @@ package() {
     PREFIX="/usr" \
     DESTDIR="${pkgdir}" \
     install
+  install \
+    -Dm644 \
+    "LICENSE" \
+    -t \
+    "${pkgdir}/usr/share/licenses/${pkgname}/"
 }
 
 # vim: ft=sh syn=sh et
