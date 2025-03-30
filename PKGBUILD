@@ -44,8 +44,8 @@ _offline="false"
 _git="false"
 _py="python"
 pkgname=evm-contracts-tools
-pkgver="0.0.0.0.0.0.0.0.1.1"
-_commit="1aff2be1eb37ea1b80b10db6cb8d1bb84c1306ee"
+pkgver="0.0.0.0.0.0.0.0.1.1.1"
+_commit="35c7c7b9ba7d0880cbdc9f295789e324b3c51e85"
 pkgrel=1
 _pkgdesc=(
   "EVM networks smart contracts tools."
@@ -67,6 +67,7 @@ depends=(
   "evm-wallet"
   "libcrash-bash"
   "libcrash-js"
+  "libevm"
   "node-run"
   "${_node}-ethers"
 )
@@ -99,10 +100,10 @@ fi
 _evmfs_network="100"
 _evmfs_address="0x69470b18f8b8b5f92b48f6199dcb147b4be96571"
 _evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
-_archive_sum="5bb71ffe12bda6ed2a03851295cff32498de07b0f1305e5a9926027444208c25"
+_archive_sum="998826de81cc76b890c531993488b9ae6e0ad9fce4bc0094f34f04e418e33335"
 _evmfs_archive_uri="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}/${_archive_sum}"
 _evmfs_archive_src="${_tarname}.zip::${_evmfs_archive_uri}"
-_archive_sig_sum='bd2bd7d65233ac2714dbde8d0ad5cee70f6dcbab97e7ac427a2568c53389f812'
+_archive_sig_sum="ac6862207cd7e318c9ff9ff3ea5363a063e5eb4abd02b9cf8c39abdfcc0dec8f"
 _archive_sig_uri="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}/${_archive_sig_sum}"
 _archive_sig_src="${_tarname}.zip.sig::${_archive_sig_uri}"
 if [[ "${_evmfs}" == "true" ]]; then
