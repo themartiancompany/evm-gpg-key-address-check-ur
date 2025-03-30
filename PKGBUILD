@@ -45,7 +45,7 @@ _git="false"
 _py="python"
 pkgname=evm-contracts-tools
 pkgver="0.0.0.0.0.0.0.0.1.1.1"
-_commit="35c7c7b9ba7d0880cbdc9f295789e324b3c51e85"
+_commit="b62c9d6d7c53b28efaeef3d9d566944c229a1419"
 pkgrel=1
 _pkgdesc=(
   "EVM networks smart contracts tools."
