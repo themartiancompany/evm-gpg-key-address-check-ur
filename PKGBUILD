@@ -41,11 +41,20 @@ _os="$( \
     -o)"
 _node="nodejs"
 _offline="false"
+_docs="true"
 _git="false"
 _py="python"
-pkgname=evm-contracts-tools
+pkgbase=evm-contracts-tools
+pkgname=(
+  "${pkgbase}"
+)
+if [[ "${_docs}" == "true" ]]; then
+  pkgname+=(
+    "${pkgbase}-docs"
+  )
+fi
 pkgver="0.0.0.0.0.0.0.0.1.1.1"
-_commit="b62c9d6d7c53b28efaeef3d9d566944c229a1419"
+_commit="0a3a216d69c572e2389031b9e492e9f57e384c3a"
 pkgrel=1
 _pkgdesc=(
   "EVM networks smart contracts tools."
@@ -83,8 +92,12 @@ optdepends=(
   )
 makedepends=(
   'make'
-  "${_py}-docutils"
 )
+if [[ "${_docs}" == "true" ]]; then
+  makedepends+=(
+    "${_py}-docutils"
+  )
+fi
 checkdepends=(
   "shellcheck"
 )
@@ -156,18 +169,36 @@ check() {
     check
 }
 
-package() {
+package_evm-contracts-tools() {
   cd \
     "${_tarname}"
   make \
     PREFIX="/usr" \
     DESTDIR="${pkgdir}" \
-    install
+    install-scripts
   install \
     -Dm644 \
     "COPYING" \
     -t \
     "${pkgdir}/usr/share/licenses/${pkgname}/"
+}
+
+package-evm-contracts-tools-docs() {
+  cd \
+    "${_tarname}"
+  make \
+    PREFIX="/usr" \
+    DESTDIR="${pkgdir}" \
+    install-doc
+  make \
+    PREFIX="/usr" \
+    DESTDIR="${pkgdir}" \
+    install-man
+  install \
+    -Dm644 \
+    "COPYING" \
+    -t \
+    "${pkgdir}/usr/share/licenses/${pkgbase}-docs/"
 }
 
 # vim: ft=sh syn=sh et
