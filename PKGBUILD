@@ -113,11 +113,10 @@ fi
 _evmfs_network="100"
 _evmfs_address="0x69470b18f8b8b5f92b48f6199dcb147b4be96571"
 _evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
-_archive_sum="998826de81cc76b890c531993488b9ae6e0ad9fce4bc0094f34f04e418e33335"
-sha256sums=('423da948dab94d439320127360d1c8f99002d11fce4937841bf75466104d1fa6')
+_archive_sum="9631a6b79bc2bb59cc4be5fd460490fbf1296fecbb5d63051bf226c6b49f0862"
 _evmfs_archive_uri="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}/${_archive_sum}"
 _evmfs_archive_src="${_tarname}.zip::${_evmfs_archive_uri}"
-_archive_sig_sum="ac6862207cd7e318c9ff9ff3ea5363a063e5eb4abd02b9cf8c39abdfcc0dec8f"
+_archive_sig_sum="b784aa1676c008fb2290ef02db4d850dc95f936ad42b0f7246ec731d947058b0"
 _archive_sig_uri="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}/${_archive_sig_sum}"
 _archive_sig_src="${_tarname}.zip.sig::${_archive_sig_uri}"
 if [[ "${_evmfs}" == "true" ]]; then
