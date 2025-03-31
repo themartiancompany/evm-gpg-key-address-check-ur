@@ -53,8 +53,8 @@ if [[ "${_docs}" == "true" ]]; then
     "${pkgbase}-docs"
   )
 fi
-pkgver="0.0.0.0.0.0.0.0.1.1.1"
-_commit="0a3a216d69c572e2389031b9e492e9f57e384c3a"
+pkgver="0.0.0.0.0.0.0.0.1.1.1.1"
+_commit="487e0366f3da2e14b8e90434f7bd1ce26e8a553f"
 pkgrel=1
 _pkgdesc=(
   "EVM networks smart contracts tools."
@@ -114,6 +114,7 @@ _evmfs_network="100"
 _evmfs_address="0x69470b18f8b8b5f92b48f6199dcb147b4be96571"
 _evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
 _archive_sum="998826de81cc76b890c531993488b9ae6e0ad9fce4bc0094f34f04e418e33335"
+sha256sums=('423da948dab94d439320127360d1c8f99002d11fce4937841bf75466104d1fa6')
 _evmfs_archive_uri="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}/${_archive_sum}"
 _evmfs_archive_src="${_tarname}.zip::${_evmfs_archive_uri}"
 _archive_sig_sum="ac6862207cd7e318c9ff9ff3ea5363a063e5eb4abd02b9cf8c39abdfcc0dec8f"
@@ -183,7 +184,7 @@ package_evm-contracts-tools() {
     "${pkgdir}/usr/share/licenses/${pkgname}/"
 }
 
-package-evm-contracts-tools-docs() {
+package_evm-contracts-tools-docs() {
   cd \
     "${_tarname}"
   make \
