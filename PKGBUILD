@@ -53,7 +53,7 @@ if [[ "${_docs}" == "true" ]]; then
   )
 fi
 pkgver="0.0.0.0.0.0.0.0.0.0.1.1"
-_commit="3ba024cfb411d0d0f67a2b9a3dc107e0f5639760"
+_commit="09d0cd663e3d7ce3d3b8ce199e51bc5759d1b774"
 pkgrel=1
 _pkgdesc=(
   "Checks a file is cryptographically"
@@ -108,10 +108,10 @@ fi
 _evmfs_network="100"
 _evmfs_address="0x69470b18f8b8b5f92b48f6199dcb147b4be96571"
 _evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
-_archive_sum='6a25e561ab17fb2d854e198433bac03532018560428e78c0f802604960561926'
+_archive_sum="cf4bb04477e45a0ec01778d68c5a9df16475e4cfdc2dc4bbe0e2e338fe3e857d"
 _evmfs_archive_uri="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}/${_archive_sum}"
 _evmfs_archive_src="${_tarname}.zip::${_evmfs_archive_uri}"
-_archive_sig_sum="4922cd7a0e9c78f3cc98df9f2191cc556851e85570aa6765294042de3d0b092a"
+_archive_sig_sum="d4793d3a51203acae0ffa5f575720daf5e202ebbbcb324b1438bb8b9a7c88b12"
 _archive_sig_uri="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}/${_archive_sig_sum}"
 _archive_sig_src="${_tarname}.zip.sig::${_archive_sig_uri}"
 if [[ "${_evmfs}" == "true" ]]; then
