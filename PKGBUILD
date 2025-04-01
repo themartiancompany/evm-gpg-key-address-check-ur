@@ -40,8 +40,8 @@ _os="$( \
   uname \
     -o)"
 _offline="false"
-_docs="true"
 _git="false"
+_docs="true"
 _py="python"
 pkgbase=gpg-signature-verify
 pkgname=(
@@ -52,11 +52,13 @@ if [[ "${_docs}" == "true" ]]; then
     "${pkgbase}-docs"
   )
 fi
-pkgver="0.0.0.0.0.0.0.0.1.1.1.1.1"
-_commit="e10f115e02e39694c1358b65538efd2f1fd74d96"
+pkgver="0.0.0.0.0.0.0.0.0.0.1.1"
+_commit="3ba024cfb411d0d0f67a2b9a3dc107e0f5639760"
 pkgrel=1
 _pkgdesc=(
-  "."
+  "Checks a file is cryptographically"
+  "signed with one of the input OpenPGP public"
+  "keys or fingerprints."
 )
 pkgdesc="${_pkgdesc[*]}"
 arch=(
@@ -69,22 +71,16 @@ license=(
   'AGPL3'
 )
 depends=(
-  "evm-chains-explorers"
-  "evm-chains-info"
-  "evm-contracts-abi-get"
-  "evm-wallet"
+  "gnupg"
+  "gpg-key-info"
   "libcrash-bash"
-  "libcrash-js"
-  "libevm"
-  "node-run"
-  "${_node}-ethers"
 )
-[[ "${_os}" != "GNU/Linux" ]] && \
-[[ "${_os}" == "Android" ]] && \
+if [[ "${_os}" != "GNU/Linux" ]] && \
+   [[ "${_os}" == "Android" ]]; then
   depends+=(
   )
+fi
 optdepends=(
-  "evm-chains-info: automatic RPC selection for many blockchains"
 )
 [[ "${_os}" == 'Android' ]] && \
   optdepends+=(
@@ -168,7 +164,7 @@ check() {
     check
 }
 
-package_evm-contracts-tools() {
+package_gpg-signature-verify() {
   cd \
     "${_tarname}"
   make \
@@ -182,7 +178,7 @@ package_evm-contracts-tools() {
     "${pkgdir}/usr/share/licenses/${pkgname}/"
 }
 
-package_evm-contracts-tools-docs() {
+package_gpg-signature-verify-docs() {
   cd \
     "${_tarname}"
   make \
