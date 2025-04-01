@@ -39,12 +39,11 @@ fi
 _os="$( \
   uname \
     -o)"
-_node="nodejs"
 _offline="false"
 _docs="true"
 _git="false"
 _py="python"
-pkgbase=evm-contracts-tools
+pkgbase=gpg-signature-verify
 pkgname=(
   "${pkgbase}"
 )
@@ -57,7 +56,7 @@ pkgver="0.0.0.0.0.0.0.0.1.1.1.1.1"
 _commit="e10f115e02e39694c1358b65538efd2f1fd74d96"
 pkgrel=1
 _pkgdesc=(
-  "EVM networks smart contracts tools."
+  "."
 )
 pkgdesc="${_pkgdesc[*]}"
 arch=(
