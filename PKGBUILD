@@ -162,7 +162,7 @@ check() {
     check
 }
 
-package_gpg-signature-verify() {
+package_gpg-signature-info() {
   cd \
     "${_tarname}"
   make \
@@ -176,7 +176,7 @@ package_gpg-signature-verify() {
     "${pkgdir}/usr/share/licenses/${pkgname}/"
 }
 
-package_gpg-signature-verify-docs() {
+package_gpg-signature-info-docs() {
   cd \
     "${_tarname}"
   make \
