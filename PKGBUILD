@@ -52,8 +52,8 @@ if [[ "${_docs}" == "true" ]]; then
     "${pkgbase}-docs"
   )
 fi
-pkgver="0.0.0.0.0.0.0.0.0.0.1.1"
-_commit="09d0cd663e3d7ce3d3b8ce199e51bc5759d1b774"
+pkgver="0.0.0.0.0.0.0.0.0.0.0.0.0.1"
+_commit="533f0d09e09129bfbff35ff72f87b28d80a0baa8"
 pkgrel=1
 _pkgdesc=(
   "Returns various information about"
@@ -71,7 +71,6 @@ license=(
 )
 depends=(
   "gnupg"
-  "gpg-key-info"
   "libcrash-bash"
 )
 if [[ "${_os}" != "GNU/Linux" ]] && \
