@@ -43,7 +43,7 @@ _offline="false"
 _git="false"
 _docs="true"
 _py="python"
-pkgbase=gpg-signature-info
+pkgbase=evm-gpg-key-address-check
 pkgname=(
   "${pkgbase}"
 )
@@ -53,11 +53,12 @@ if [[ "${_docs}" == "true" ]]; then
   )
 fi
 pkgver="0.0.0.0.0.0.0.0.0.0.0.0.0.1"
-_commit="533f0d09e09129bfbff35ff72f87b28d80a0baa8"
+_commit="b97947b2aef393c9a943292fdfae480387434303"
 pkgrel=1
 _pkgdesc=(
-  "Returns various information about"
-  "files cryptographically signed with OpenPGP."
+  "Checks whether an OpenPGP key has its user"
+  "set appropriately for an Ethereum Virtual"
+  "Machine-compatible blockchain network account."
 )
 pkgdesc="${_pkgdesc[*]}"
 arch=(
@@ -70,7 +71,7 @@ license=(
   'AGPL3'
 )
 depends=(
-  "gnupg"
+  "gpg-key-info"
   "libcrash-bash"
 )
 if [[ "${_os}" != "GNU/Linux" ]] && \
@@ -106,7 +107,7 @@ fi
 _evmfs_network="100"
 _evmfs_address="0x69470b18f8b8b5f92b48f6199dcb147b4be96571"
 _evmfs_ns="0x87003Bd6C074C713783df04f36517451fF34CBEf"
-_archive_sum='43e59b9cdb10d00f835a5ab8e9292a4032044c9ac9eff5e34e3088b651bec541'
+_archive_sum='5191c76e4154e22868e38037b068a5d2632c8c25e989d100af1355ec3b7f222e'
 _evmfs_archive_uri="evmfs://${_evmfs_network}/${_evmfs_address}/${_evmfs_ns}/${_archive_sum}"
 _evmfs_archive_src="${_tarname}.zip::${_evmfs_archive_uri}"
 _archive_sig_sum="2d50d974345f26e14fb17348c9fc314ce5f2d33437e3e6e9c8c8c4923226d463"
@@ -162,7 +163,7 @@ check() {
     check
 }
 
-package_gpg-signature-info() {
+package_evm-gpg-key-address-check() {
   cd \
     "${_tarname}"
   make \
@@ -176,7 +177,7 @@ package_gpg-signature-info() {
     "${pkgdir}/usr/share/licenses/${pkgname}/"
 }
 
-package_gpg-signature-info-docs() {
+package_evm-gpg-key-address-check-docs() {
   cd \
     "${_tarname}"
   make \
