@@ -19,7 +19,7 @@
 [comment]: <> (License along with this program.)
 [comment]: <> (If not, see <https://www.gnu.org/licenses/>.)
 
-# `gpg-signature-info`
+# `evm-gpg-key-address-check`
 
 universal recipe for
 [user repo](
